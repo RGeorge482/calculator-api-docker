@@ -3,6 +3,11 @@ const fastify = Fastify({
   logger: true,
 });
 
+// Home route
+fastify.get("/", function (request, reply) {
+  reply.send({ hello: "world" });
+});
+
 // Addition
 fastify.get("/sum", function (request, reply) {
   const a = parseInt(request.query["a"]);
